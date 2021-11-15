@@ -1,0 +1,73 @@
+{%extends 'main/base.html'%} {%load bootstrap4%} {%load static%} {%block content%} {{block.super}}
+<div class="container-fluid">
+    <div class="row" style="margin-left: 0%;margin-right: 0%;">
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="card">
+                <center><img class="img-responsive" src="../../static/images/image (1).png" alt="Image" width="60%" height="60%"></center>
+
+                <div class="card-body">
+                    {%for details in details%}
+                    <h2 class="name text-center">{{details.name}}</h2>
+                    <h4 class="text-center">{{details.role}}</h4>
+                    <p class="text-center">
+                        <a href="https://docs.google.com/document/d/e/2PACX-1vQwNz9kXaXa3YNR9VTF3v3sLzklLdlRrhh_RtlntWODzZJzA_LNvNW-afD1iahi12fYaCoFoCVNrsnE/pub">Curriculum vitae</a>
+                    </p>
+                    <h4>Skills</h4>
+                    <ul class="unordered-list" style="column-count: 2;">
+                        {%for skill in details.technologies %}
+                        <li>{{skill}}</li>
+                        {%endfor%}
+                    </ul>
+                    <p class="text-center">"<i>{{details.quote}}</i>", C.A.R. Hoare</p>
+                    <div class="accounts">
+                        <p>
+                            <a href="{{details.linkedin}}"><img src="https://img.icons8.com/ios-glyphs/30/4a90e2/linkedin.png" /></a>
+                        </p>
+                        <p>
+                            <a href="{{details.github_link}}"><img src="https://img.icons8.com/material-rounded/24/000000/github.png" /></a>
+                        </p>
+                        <p>
+                            <a href="{{details.twitter}}"><img src="https://img.icons8.com/fluency/24/000000/twitter.png" /></a>
+                        </p>
+                        <p>
+                            <a href="{{details.facebook}}"><img src="https://img.icons8.com/color/24/000000/facebook-new.png" /></a>
+                        </p>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8 col-md-8 col-lg-8">
+            <h2>EDUCATION</h2>
+            {%for education in education%}
+            <div class="card" style="border: 0px">
+                <div class="card-body" style="border: 1px solid lightgray; border-radius: 5px;margin-bottom: 2px;">
+                    <h4 class="card-title">
+                        <a href="{{education.school_web}}">{{education.institution}}</a> | {{education.school_location}} | {{education.period}}</h4>
+                    <p class="card-text">{{education.certificate_type}} in {{education.certificate_name}}</p>
+                </div>
+            </div>
+            {%endfor%}
+            <h2>PROJECTS</h2>
+            {%for projects in projects%}
+            <div class="card cardproject" style="border: 0px">
+                <div class="card-body" style="border: 1px solid lightgray; border-radius: 5px;margin-bottom: 2px;">
+                    <h4 class="card-title">{{projects.title}}</h4>
+                    <p class="card-text">{{projects.description | truncatechars:200}}<a href="{%url 'project' projects.id%}">more</a></p>
+                </div>
+            </div>
+            {%endfor%}
+            <h2>Work experience.</h2>
+            {%for work in work%}
+            <div class="card cardproject" style="border: 0px">
+                <div class="card-body" style="border: 1px solid lightgray; border-radius: 5px;margin-bottom: 2px;">
+                    <h4 class="card-title">{{work.company}} | {{work.position}} | {{work.date}}</h4>
+                    <h4>Tasks</h4>
+                    <p class="card-text">{{work.tasks | truncatechars:200}}<a href="{%url 'work' work.id%}">more</a></p>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+</a> {%endblock%}

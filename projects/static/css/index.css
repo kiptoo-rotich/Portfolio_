@@ -1,0 +1,52 @@
+body {
+    background-image: url(../images/webstacks-ewXKiIezeTg-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.unordered-list {
+    list-style: none;
+}
+
+.unordered-list li:before {
+    content: '✓';
+}
+
+.proj {
+    background-color: rgba(255, 255, 255, 0.849);
+    margin: 4% 1% 0% 1%;
+    border-radius: 5px;
+}
+
+.project {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+p {
+    font-family: cursive;
+    font-size: 18px;
+}
+
+h2 {
+    font-family: 'Bree Serif', serif;
+}
+
+a {
+    font-family: cursive;
+}
+
+li {
+    font-family: serif;
+}
+
+h4 {
+    font-family: serif;
+    color: darkblue;
+}
+
+.btn-primary {
+    width: 100%;
+}

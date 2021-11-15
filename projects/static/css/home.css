@@ -1,0 +1,44 @@
+body {
+    background-image: url("../images/white.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.accounts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0px 80px 0px 80px;
+}
+
+.unordered-list {
+    list-style: none;
+}
+
+.unordered-list li:before {
+    content: '✓';
+}
+
+p {
+    font-family: cursive;
+    font-size: 18px;
+}
+
+h2 {
+    font-family: 'Bree Serif', serif;
+}
+
+h4 {
+    font-family: serif;
+    color: darkblue;
+}
+
+li {
+    font-family: serif;
+}
+
+.cardproject:last-child {
+    margin-bottom: 2%;
+}

@@ -1,9 +1,9 @@
 {%extends 'main/base.html'%} {%load bootstrap4%} {%load static%} {%block content%} {{block.super}}
 <div class="container-fluid">
     <div class="row" style="margin-left: 0%;margin-right: 0%;">
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <div class="card mt-5">
-                <center><img class="img-responsive" src="../../static/images/image (1).png" alt="Image" width="60%" height="60%"></center>
+        <div class="col-sm-5 col-md-5 col-lg-5">
+            <div class="card mt-0">
+                <center><img class="img-responsive" src="../../static/images/image (1).png" alt="Image" width="50%" height="50%"></center>
 
                 <div class="card-body">
                     {%for details in details%}
@@ -34,20 +34,20 @@
                         </p>
                     </div>
                     {%endfor%}
+                    <h2>EDUCATION</h2>
+                    {%for education in education%}
+                    <div class="card" style="border: 0px">
+                        <div class="card-body" style="border: 1px solid lightgray; border-radius: 5px;margin-bottom: 2px;">
+                            <h4 class="card-title">
+                                <a href="{{education.school_web}}">{{education.institution}}</a> | {{education.school_location}} | {{education.period}}</h4>
+                            <p class="card-text">{{education.certificate_type}} in {{education.certificate_name}}</p>
+                        </div>
+                    </div>
+                    {%endfor%}
                 </div>
             </div>
         </div>
-        <div class="col-sm-8 col-md-8 col-lg-8">
-            <h2>EDUCATION</h2>
-            {%for education in education%}
-            <div class="card" style="border: 0px">
-                <div class="card-body" style="border: 1px solid lightgray; border-radius: 5px;margin-bottom: 2px;">
-                    <h4 class="card-title">
-                        <a href="{{education.school_web}}">{{education.institution}}</a> | {{education.school_location}} | {{education.period}}</h4>
-                    <p class="card-text">{{education.certificate_type}} in {{education.certificate_name}}</p>
-                </div>
-            </div>
-            {%endfor%}
+        <div class="col-sm-7 col-md-7 col-lg-7">
             <h2>PROJECTS</h2>
             {%for projects in projects%}
             <div class="card cardproject" style="border: 0px">
@@ -56,9 +56,7 @@
                     <p class="card-text">{{projects.description | truncatechars:200}}<a href="{%url 'project' projects.id%}">more</a></p>
                 </div>
             </div>
-            {%endfor%}
-            <h2>Work experience.</h2>
-            {%for work in work%}
+            {%endfor%} {%for work in work%}
             <div class="card cardproject" style="border: 0px">
                 <div class="card-body" style="border: 1px solid lightgray; border-radius: 5px;margin-bottom: 2px;">
                     <h4 class="card-title">{{work.company}} | {{work.position}} | {{work.date}}</h4>
